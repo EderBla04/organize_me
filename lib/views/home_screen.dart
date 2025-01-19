@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:organize_me/views/new_task_screen.dart';
+import 'package:organize_me/views/task_details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +48,26 @@ class HomeScreen extends StatelessWidget {
             Text('Projects',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             SizedBox(height: 10),
+
+            // Lista de proyectos
+            Material(
+              color: Colors.white,
+              elevation: 2,
+              borderRadius: BorderRadius.circular(10),
+              child: ListTile(
+                title: Text('Holidays in Norway'),
+                subtitle: Text('3 tasks remaining'),
+                trailing: Text('5d'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TaskDetailsScreen(),
+                    ),
+                  );
+                },
+              ),
+            ),
 
             // Lista de proyectos
           ],
