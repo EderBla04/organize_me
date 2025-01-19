@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'views/task_list_screen.dart';
+import 'package:organize_me/views/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const TaskListScreen(),
+        '/': (context) => HomeScreen(),
       },
     );
   }
