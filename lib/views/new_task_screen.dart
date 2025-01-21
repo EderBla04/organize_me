@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NewTaskScreen extends StatelessWidget {
+  const NewTaskScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,12 +87,12 @@ class NewTaskScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Create'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   padding: EdgeInsets.symmetric(vertical: 16),
                 ),
+                child: Text('Create'),
               ),
             ),
           ],

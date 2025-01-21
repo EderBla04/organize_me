@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:organize_me/views/home_screen.dart';
 
 class TaskDetailsScreen extends StatelessWidget {
+  const TaskDetailsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:organize_me/views/new_task_screen.dart';
+
 import 'package:organize_me/views/task_details_screen.dart';
+
+import 'profile_menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,11 +14,19 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            CircleAvatar(
-              backgroundImage:
-                  AssetImage('assets/avatar.png'), // Usa tu imagen local o red
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ProfileMenuScreen()));
+              },
+              icon: CircleAvatar(
+                backgroundImage: AssetImage(
+                    'assets/avatar.png'), // Usa tu imagen local o red
+              ),
+              selectedIcon: SizedBox(width: 10),
             ),
-            SizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
