@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:organize_me/views/new_task_screen.dart';
+import 'package:organize_me/views/new_task_list_screen.dart';
 
 import 'package:organize_me/views/task_details_screen.dart';
 
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
               },
               icon: CircleAvatar(
                 backgroundImage: AssetImage(
-                    'assets/avatar.png'), // Usa tu imagen local o red
+                    'assets/icons/147144.png'), // Usa tu imagen local o red
               ),
               selectedIcon: SizedBox(width: 10),
             ),
@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => NewTaskScreen(),
+              builder: (context) => NewTaskListScreen(),
             ),
           );
         },

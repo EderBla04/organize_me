@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:organize_me/views/home_screen.dart';
+import 'package:organize_me/views/new_task_screen.dart';
 
 class TaskDetailsScreen extends StatelessWidget {
   const TaskDetailsScreen({super.key});
@@ -98,7 +99,10 @@ class TaskDetailsScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => NewTaskScreen()));
+        },
         backgroundColor: Colors.black,
         child: Icon(Icons.add, color: Colors.white),
       ),

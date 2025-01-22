@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -13,14 +15,14 @@ class AboutScreen extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.black),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
               child: Container(
-                height: 150,
-                width: 150,
+                height: 400,
+                width: 400,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/logo.png'),
@@ -73,7 +75,95 @@ class AboutScreen extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Divider(),
+            Text(
+              'Contact',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            const SizedBox(height: 10),
+            // Gmail interactivo
+            InkWell(
+              onTap: () {
+                launchUrl(Uri.parse('mailto:edergaelblanco04@gmail.com'));
+              },
+              child: Row(
+                children: const [
+                  Icon(FontAwesomeIcons.envelope),
+                  SizedBox(width: 10),
+                  Text(
+                    'edergaelblanco04@gmail.com',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            // Teléfono interactivo
+            InkWell(
+              onTap: () {
+                launchUrl(Uri.parse('tel:7681007755'));
+              },
+              child: Row(
+                children: const [
+                  Icon(FontAwesomeIcons.phone),
+                  SizedBox(width: 10),
+                  Text(
+                    '768 100 7755',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(height: 10),
+            Text(
+              'Social Networks',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Row(
+              children: [
+                IconButton(
+                    onPressed: () {
+                      //Abrir instagram
+                      launchUrl(
+                          Uri.parse('https://www.instagram.com/gaelblanco04/'));
+                    },
+                    icon: Icon(FontAwesomeIcons.instagram)),
+                IconButton(
+                    onPressed: () {
+                      //Abrir facebook
+                    },
+                    icon: Icon(FontAwesomeIcons.facebook)),
+                IconButton(
+                    onPressed: () {
+                      //Abrir github
+
+                      launchUrl(Uri.parse('https://github.com/EderBla04'));
+                    },
+                    icon: Icon(FontAwesomeIcons.github)),
+                IconButton(
+                    onPressed: () {
+                      //Abrir linkedin
+                      launchUrl(Uri.parse(
+                          'https://www.linkedin.com/in/eder-gael-blanco-alejandre-540663216/'));
+                    },
+                    icon: Icon(FontAwesomeIcons.linkedin)),
+                IconButton(
+                    onPressed: () {
+                      launchUrl(Uri.parse(
+                          'https://open.spotify.com/user/312ftnkivfcqrefka37zeiekzi7q?si=4496bb68d4804032'));
+                    },
+                    icon: Icon(FontAwesomeIcons.spotify)),
+              ],
+            ),
+
+            Divider(),
             Text(
               'Developed by Blanco Software © 2024-2025',
               style: TextStyle(
