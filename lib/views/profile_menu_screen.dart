@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:organize_me/views/about_screen.dart';
+import 'package:organize_me/views/account_information_screen.dart';
+import 'package:organize_me/views/settings_screen.dart';
 
 class ProfileMenuScreen extends StatelessWidget {
   const ProfileMenuScreen({super.key});
@@ -23,6 +25,11 @@ class ProfileMenuScreen extends StatelessWidget {
             title: Text('Account Information'),
             subtitle: Text('View and update your account details'),
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AccountInformationScreen()),
+              );
               // Navigate to account information screen
             },
           ),
@@ -33,6 +40,10 @@ class ProfileMenuScreen extends StatelessWidget {
             title: Text('Settings'),
             subtitle: Text('Customize your app preferences'),
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
               // Navigate to settings screen
             },
           ),

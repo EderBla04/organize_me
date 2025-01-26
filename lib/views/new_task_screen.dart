@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 
-class NewTaskScreen extends StatelessWidget {
-  // Constructor with key parameter
+class NewTaskScreen extends StatefulWidget {
+  // TODO: Agregar parámetro para recibir datos del proyecto padre
   const NewTaskScreen({super.key});
+
+  @override
+  State<NewTaskScreen> createState() => _NewTaskScreenState();
+}
+
+class _NewTaskScreenState extends State<NewTaskScreen> {
+  // TODO: Agregar variables de estado y controladores
+  // - Controlador para título
+  // - Controlador para notas
+  // - Variable para fecha límite
+  // - Variable para prioridad
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Top navigation bar
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.close),
@@ -19,43 +29,34 @@ class NewTaskScreen extends StatelessWidget {
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      // Main content with scroll capability
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Task title input field
+            Text(
+              'Add Task to: Holidays in Norway',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
             TextField(
+              // TODO: Agregar controlador para título
               decoration: InputDecoration(
-                hintText: 'Task title',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
+                labelText: 'Task Title',
+                border: OutlineInputBorder(), // Agregar coma aquí
               ),
             ),
             SizedBox(height: 16),
-
-            // Task description input field (multiline)
-            TextField(
-              maxLines: 4,
-              decoration: InputDecoration(
-                hintText: 'Description',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-            ),
-            SizedBox(height: 16),
-
-            // Date selection option
             ListTile(
               leading: Icon(Icons.calendar_today),
-              title: Text('Select date'),
+              title: Text('Due Date'),
+              subtitle: Text('Must be before March 15, 2024'),
               trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                // TODO: Implementar selección de fecha
+                // - Validar que esté dentro del rango del proyecto
+              },
             ),
-
-            // Priority selection option
             ListTile(
               leading: Icon(Icons.flag),
               title: Text('Priority'),
@@ -67,36 +68,31 @@ class NewTaskScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Attachment option
-            ListTile(
-              leading: Icon(Icons.attach_file),
-              title: Text('Add attachment'),
-              trailing: Icon(Icons.arrow_forward_ios),
+            TextField(
+              maxLines: 3,
+              // TODO: Agregar controlador para notas
+              decoration: InputDecoration(
+                labelText: 'Notes',
+                border: OutlineInputBorder(), // Agregar coma aquí
+              ),
             ),
-
-            // Assign to option
-            ListTile(
-              leading: Icon(Icons.person_add),
-              title: Text('Assign to'),
-              trailing: Icon(Icons.arrow_forward_ios),
-            ),
-
             SizedBox(height: 32),
-
-            // Create task button
             SizedBox(
-              width: double.infinity, // Makes button full width
+              width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: Text('Create Task'),
-                ),
+                onPressed: () {
+                  // TODO: Implementar lógica de creación de tarea
+                  // - Validar campos requeridos
+                  // - Crear objeto de tarea
+                  // - Agregar al proyecto padre
+                  // - Navegar de vuelta
+                  Navigator.pop(context);
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
-                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(vertical: 16),
                 ),
+                child: Text('Add Task'),
               ),
             ),
           ],

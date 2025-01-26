@@ -104,14 +104,14 @@ class AboutScreen extends StatelessWidget {
             // Teléfono interactivo
             InkWell(
               onTap: () {
-                launchUrl(Uri.parse('tel:7681007755'));
+                launchUrl(Uri.parse('tel:+527681007755'));
               },
               child: Row(
                 children: const [
                   Icon(FontAwesomeIcons.phone),
                   SizedBox(width: 10),
                   Text(
-                    '768 100 7755',
+                    '+52 768 100 7755',
                     style: TextStyle(fontSize: 16),
                   ),
                 ],
